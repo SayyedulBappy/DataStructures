@@ -13,13 +13,15 @@ for item in queue:
     print(item,end=" ")
 
 choice = None
-while(choice!=4):
+while(choice!=6):
     print()
     print('###### queue operations ######')
     print('1. Display the integers')
     print('2. Enqueue integers to queue')
     print('3. Deque integers from queue')
-    print('4. Exit')
+    print('4. Front of queue')
+    print('5. Rear of queue')
+    print('6. Exit')
 
     choice = input("Enter your choice: ")
     choice = int(choice)
@@ -36,8 +38,15 @@ while(choice!=4):
     elif choice == 3:
         # remove element
         print(queue.popleft())
-
     elif choice == 4:
+        #  element at front
+        front = queue[-1]
+        print(f"Front of queue is {front}")
+    elif choice == 5:
+        # element at rear
+        rear = queue[0]
+        print(f"Rear of queue is {rear}")
+    elif choice == 6:
         print("program exited")
         break
     else:

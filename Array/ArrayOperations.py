@@ -9,7 +9,7 @@ arr = list(map(int, input().split()))
 
 for item in arr:
     print(item,end=" ")
-
+print()
 choice = None
 while(choice!=4):
     print('###### Array operations ######')

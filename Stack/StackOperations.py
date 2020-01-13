@@ -1,15 +1,9 @@
+from stack import Stack
 
 # create Stack
 
-print("Enter integers separated by spaces to create an stack: ", end=" ")
+stack = Stack()
 
-stack = list(map(int,input().strip().split()))
-
-# display the created stack
-
-for item in stack:
-    print(item,end=" ")
-print()
 choice = None
 while(choice!=5):
     print('###### Stack operations ######')
@@ -23,19 +17,21 @@ while(choice!=5):
     choice = int(choice)
 
     if choice == 1:
-        for item in stack:
+        for item in stack.items:
             print(item,end=" ")
         
     elif choice == 2:
         # push elements
         itemToAdd = input("Enter integer to push: ")
-        stack.append(itemToAdd)
+        stack.push(itemToAdd)
         
     elif choice == 3:
+        if stack.is_empty():
+            print("Stack is empty")
         # pop element
         print(stack.pop())
     elif choice == 4:
-        top = stack[-1]
+        top = stack.items[-1]
         print(f"Top of stack is {top}")
     elif choice == 5:
         print("program exited")

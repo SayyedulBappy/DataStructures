@@ -23,24 +23,43 @@ def insert(root,node):
 			else: 
 				insert(root.left, node) 
 
-# function to do inorder tree traversal 
+# A utility function to do inorder tree traversal 
 def inorder(root): 
 	if root: 
 		inorder(root.left) 
 		print(root.val,end=" ") 
 		inorder(root.right) 
 
-# BST creation
 
-root = Node(60) 
-insert(root,Node(30)) 
-insert(root,Node(20)) 
-insert(root,Node(40)) 
-insert(root,Node(70)) 
-insert(root,Node(50)) 
-insert(root,Node(80)) 
 
-# Print inoder traversal of the BST 
-print("Inorder traversal of the Binary Search Tree is:", end=" ")
-inorder(root) 
+
+rootval = int(input("Enter root of BST: ")) 
+root=Node(rootval)
+choice = None
+while(choice!=3):
+    print()
+    print('###### Binary Tree operations ######')
+    print('1. insert integer to Binary Search Tree')
+    print('2. inorder traversal')
+    print('3. Exit')
+
+    choice = input("Enter your choice: ")
+    choice = int(choice)
+
+    if choice == 1:
+        valueToInsert = int(input("Enter a number to insert: ")) 
+        insert(root,Node(valueToInsert))
+
+    elif choice == 2:
+        # Print inoder traversal of the BST 
+        print("Inorder traversal of the Binary Search Tree is:", end=" ")
+        inorder(root)
+    elif choice == 3:
+        print("program exited")
+        break
+            
+    else:
+        print("Invalid Choice")
+
+
 
